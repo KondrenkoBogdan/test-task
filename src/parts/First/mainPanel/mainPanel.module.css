@@ -1,0 +1,121 @@
+div.mainPanel {
+    width: 86.4%;
+    height: 100%;
+}
+.red{
+    color: red;
+}
+div.myBalanceDiv {
+    color: white;
+    font-family: Bebas Neue;
+    padding: 1.06% 0 1.06% 2.83%;
+}
+
+span.balanceTitle {
+    font-size: 53px;
+}
+
+span.makeDeposit {
+    position: relative;
+    font-weight: 500;
+    bottom: 13px;
+    font-size: 18px;
+    margin-left: 3%;
+    padding: 9px 25px 9px 25px;
+    background-color: #08979C;
+    border-radius: 10px;
+}
+a.makeDeposit {
+    font-family: Roboto;
+    color: white;
+}
+
+div.tabel {
+    width: 100%;
+}
+div.tabelRow{
+    color: white;
+    display: flex;
+}
+div.tabelRow * {
+    font-size: 17px;
+    padding: 1.42% 0 1.42% 0;
+}
+span.hash{
+    text-align: center;
+    flex: 1.05;
+}
+span.dateTime{
+    padding-left: 1.2%;
+    flex: 2.2;
+}
+span.info{
+    padding-left: 1.2%;
+    flex: 8.8;
+}
+span.type{
+    padding-left: 1.2%;
+    flex: 0.95;
+}
+span.cash{
+    padding-right: 1.2%;
+    text-align: right;
+    flex: 2.1;
+}
+span.status{
+    text-align: center;
+    flex: 0.9;
+}
+span.rowItem{
+    background-color: #00181D;
+    border: 1px solid #00474F;
+    cursor: pointer;
+    transition: 0.1s;
+}
+div.row:hover span.rowItem{
+    background-color: #00474F;
+}
+div.paginatorDiv{
+    text-align: right;
+    color: white;
+    width: 100%;
+    background: #00292E;
+}
+div.paginator{
+    padding: 1.85% 1.7% 1.85% 0;
+}
+span.active{
+    background: #08979C;
+}
+span.paginatorNum{
+    border-radius: 10px;
+    font-size: 25px;
+    border: #08979C 3px solid;
+    padding: 3px 0.8% ;
+    margin: 0 0.27% 0 0.27% ;
+}
+span.paginatorArch{
+    border-radius: 10px;
+    font-size: 25px;
+    border: #08979C 2px solid;
+    padding: 3px 0.4% ;
+    margin: 0 0.27% 0 0.27% ;
+}
+span.paginatorNum:hover{
+    cursor: pointer;
+}
+span.showOnPage{
+    font-weight: 600;
+    font-size: 19px;
+    margin-right: 3.2%;
+}
+span.showSelectedPage{
+    border-radius: 10px;
+    font-size: 25px;
+    border: #08979C 2px solid;
+    padding: 3px 0.3% 3px 1.3% ;
+    margin: 0 0.27% 0 0.27% ;
+}
+span.bottomArch{
+    padding-left: 1%;
+}

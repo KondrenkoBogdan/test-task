@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {HashRouter, Route} from "react-router-dom";
+import Home from "./parts/Home/Home";
+import ConnectedFirstPageContainer from "./parts/First/FirstPageContainer";
+import {Provider} from "react-redux";
+import store from "./Redux/redux-store";
+import SecondPartContainer from "./parts/Second/secondPartContainer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Route exact path="/" render={Home}/>
+            <Route path="/first" component={ConnectedFirstPageContainer}/>
+            <Route path="/second" render={SecondPartContainer}/>
+        </div>
+    );
 }
 
-export default App;
+const MainApp = () => {
+    return (
+        <HashRouter>
+            <Provider store={store}>
+                <App/>
+            </Provider>
+        </HashRouter>
+    )
+}
+
+
+export default MainApp;
