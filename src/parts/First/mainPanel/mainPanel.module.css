@@ -110,12 +110,39 @@ span.showOnPage{
     margin-right: 3.2%;
 }
 span.showSelectedPage{
+    position: relative;
     border-radius: 10px;
     font-size: 25px;
     border: #08979C 2px solid;
     padding: 3px 0.3% 3px 1.3% ;
     margin: 0 0.27% 0 0.27% ;
+    cursor: pointer;
 }
 span.bottomArch{
     padding-left: 1%;
+}
+span.showSelectedPage > div{
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+}
+div.menuItem{
+    cursor: pointer;
+}
+div.menuItem:hover{
+    background: #00474f;
+}
+div.menu{
+    text-align: center;
+    width: 95%;
+    border-radius: 10px;
+    font-size: 25px;
+    border: #08979C 2px solid;
+    background: #00181d;
+}
+.rotated{
+    transform: rotate(180deg);
+}
+.arrow{
+    transition: 0.3s;
 }

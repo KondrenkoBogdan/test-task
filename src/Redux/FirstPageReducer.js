@@ -160,7 +160,10 @@ let initialState = {
         {id: 142, dateTime: new Date(2013, 6, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done},
         {id: 143, dateTime: new Date(2012, 5, 27, 11, 44),info: " Make up deposit $ 1,500.00 to  your account.",type: sale,cash: 2.25,status: done},
         {id: 144, dateTime: new Date(2011, 4, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done},
-        {id: 145, dateTime: new Date(2010, 3, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done}
+        {id: 145, dateTime: new Date(2010, 3, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done},
+        {id: 146, dateTime: new Date(2010, 3, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done},
+        {id: 147, dateTime: new Date(2010, 3, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done},
+        {id: 148, dateTime: new Date(2010, 3, 27, 11, 44),info: "Buy in WOW Classic the unique item, Axe of Ice King",type: sale,cash: 2.25,status: done}
     ],
     pagePortion: 1,
     pagePortionCount: 5,

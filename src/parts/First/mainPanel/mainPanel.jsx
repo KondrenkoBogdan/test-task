@@ -3,9 +3,9 @@ import s from "./mainPanel.module.css";
 import {NavLink} from "react-router-dom";
 import RightOutlined from "@ant-design/icons/lib/icons/RightOutlined";
 import LeftOutlined from "@ant-design/icons/lib/icons/LeftOutlined";
-import DownOutlined from "@ant-design/icons/lib/icons/DownOutlined";
+import UpOutlined from "@ant-design/icons/lib/icons/UpOutlined";
 
-const MainPanel = ({items, pageSelected, paginatorArray, pageChanger, pagePortion, portionsCount, portionChange}) => {
+const MainPanel = ({items, pageSelected, paginatorArray, pageChanger, pagePortion, portionsCount, portionChange, isMenu, toggleMenu, pageCountArray}) => {
     return (<>
         <div className={s.mainPanel} style={{background: "#ccc"}}>
             <div className={s.myBalanceDiv} style={{background: "#00292E"}}><span
@@ -18,10 +18,10 @@ const MainPanel = ({items, pageSelected, paginatorArray, pageChanger, pagePortio
             </span>
             </div>
             <div className={s.tabel} style={{background: "#00474F"}}>
-                <div className={s.tabelRow}><span className={s.hash}>#</span><span
-                    className={s.dateTime}>Date & Time</span><span className={s.info}>Info</span><span
-                    className={s.type}>Type</span><span className={s.cash}>Cash</span><span
-                    className={s.status}>Status</span></div>
+                <div className={s.tabelRow}><span className={s.hash}><b>#</b></span><span
+                    className={s.dateTime}><b>Date & Time</b></span><span className={s.info}><b>Info</b></span><span
+                    className={s.type}><b>Type</b></span><span className={s.cash}><b>Cash</b></span><span
+                    className={s.status}><b>Status</b></span></div>
             </div>
             {items.map(i => {
                 return (
@@ -37,22 +37,36 @@ const MainPanel = ({items, pageSelected, paginatorArray, pageChanger, pagePortio
                         }).format(i.dateTime)}</span>
                         <span className={s.info + " " + s.rowItem}>{i.info}</span>
                         <span className={s.type + " " + s.rowItem}>{i.type}</span>
-                        <span className={s.cash + " " + s.rowItem}>{i.cash}</span>
-                        <span className={s.status + " " + s.rowItem + " " + (i.status==="Error" ? s.red: null)}>{i.status}</span>
+                        <span className={s.cash + " " + s.rowItem}><b>$ {i.cash}</b></span>
+                        <span
+                            className={s.status + " " + s.rowItem + " " + (i.status === "Error" ? s.red : null)}>{i.status}</span>
                     </div>
                 )
             })}
             <div className={s.paginatorDiv}>
                 <div className={s.paginator}>
-                    <span className={s.showOnPage}>Show on page: <span className={s.showSelectedPage}>{pageSelected}<span className={s.bottomArch}><DownOutlined style={{fontSize: "18px"}} /></span></span></span>
+
+                    <span className={s.showOnPage}>Show on page: <span onClick={() => {
+                        toggleMenu()
+                    }} className={s.showSelectedPage}>
+                        {isMenu ? <div className={s.menu}>
+                            { pageCountArray.map( i => <div className={s.menuItem} onClick={() => {pageChanger(i)}}>{i}</div>) }
+                        </div> : null }
+                        {pageSelected}<span className={s.bottomArch}>
+                        <UpOutlined className={(isMenu ? s.rotated : null) + " " + s.arrow} />
+                        </span></span></span>
+
+
                     <span className={s.paginator}>
-                        {pagePortion>1 ? <span onClick={() => portionChange("minus")} className={s.paginatorArch}><LeftOutlined /></span> : null}
+                        {pagePortion > 1 ? <span onClick={() => portionChange("minus")}
+                                                 className={s.paginatorArch}><LeftOutlined/></span> : null}
                         {paginatorArray.map(num => {
                             return <span onClick={() => {
                                 pageChanger(num)
                             }} className={(pageSelected === num ? s.active : null) + " " + s.paginatorNum}>{num}</span>
                         })}
-                        {pagePortion<portionsCount ? <span onClick={() => portionChange("plus")} className={s.paginatorArch}><RightOutlined /></span> : null}
+                        {pagePortion < portionsCount ? <span onClick={() => portionChange("plus")}
+                                                             className={s.paginatorArch}><RightOutlined/></span> : null}
                     </span>
                 </div>
             </div>
